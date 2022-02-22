@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "npm run init-db && jest",
+    "test:watch": "jest --watch",
+    "init-db": "node ./Database/init-db.js",
+    "start-dev": "npm run init-db && nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "supertest": "^6.2.2"
   },
   "dependencies": {
+    "better-sqlite3": "^7.5.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2"
   }
